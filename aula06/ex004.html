@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Aula 06 - Exercício 04</title>
 </head>
 <body>
@@ -10,7 +11,9 @@
 
   <script>
     var nome = window.prompt('Qual é o seu nome?')
-    document.write(`Seu nome tem ${nome.length} letras.`)
+    document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras. </br>`)
+    document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()} </br>`)
+    document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}`)
   </script>
 </body>
 </html>
