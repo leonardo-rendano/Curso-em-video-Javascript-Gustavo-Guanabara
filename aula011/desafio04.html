@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Desafio 04</title>
+</head>
+<body>
+  <h1>Descubra sua nacionalidade!</h1>
+  <h2>Digite o seu país de origem e descubra:</h2>
+  <input type="text" id="txt01">
+  <input type="button" id="btn" value="Verificar" onclick="verificar()">
+  <div id="res"> Resultado </div>
+  <div id="nacionalidade"></div>
+
+  <script>
+
+    function verificar() {
+      let txt = document.querySelector('input#txt01')
+      let pais = document.querySelector('input#btn')
+      let nac = document.querySelector('div#nacionalidade')
+      
+      let verify = document.querySelector('div#res') 
+      let resultado = txt.value
+      
+      verify.innerHTML = `Você é do ${resultado}.` 
+
+      if (resultado != 'Brasil') {
+        nacionalidade.innerHTML = 'Você é estrangeiro!'
+      } else {
+        nacionalidade.innerHTML = 'Você é brasileiro!'
+      }
+    }
+
+  </script>
+</body>
+</html>
