@@ -8,30 +8,30 @@ function contar() {
   if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
     alert('ERRO! Todos os campos devem ser preenchidos.')
   } else {
-    resultado.innerHTML = 'Contando...'
+    resultado.innerHTML = 'Contando... <br>'
 
     let start = Number(inicio.value)
     let end = Number(fim.value)
     let step = Number(passo.value)
 
-    for (let count = start; count <= end; count += step) {
-      resultado.innerHTML += ` ${count}` 
+    if (step <= 0) {
+      alert('Paso inválido!. Considerando PASSO 1')
+      step = 1
+    }
+
+    if (start < end) {
+      for (let count = start; count <= end; count += step) {
+        // Contagem crescente
+        resultado.innerHTML += ` ${count}` 
+      }
+    } else {
+      for (let count = start; count > end; count -= step) {
+        //Contagem decrescente
+        resultado.innerHTML += ` ${count}`
+      }
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // O contador (count) vai começar no inicio (start)
