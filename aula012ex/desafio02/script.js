@@ -2,15 +2,14 @@ function verificar() {
   let data = new Date()
   let ano = data.getFullYear()
 
-  let formAno = document.getElementById('txtano')
-  let resultado = document.getElementById('res')
-
+  let formAno = document.querySelector('input#txtano')
+  let resultado = document.querySelector('div#res')
 
   if (formAno.value.length == 0 || Number(formAno.value) > ano) {
     alert('ERRO! Verifique os campos e tente novamente.')
   } else {
-    let formSex = document.getElementsByName('inputSex')
     let idade = ano - Number(formAno.value)
+    let formSex = document.getElementsByName('inputSex')
 
     let genero = ''
 
@@ -21,7 +20,7 @@ function verificar() {
       genero = 'Homem'
       if (idade >= 0 && idade <= 10) {
         img.setAttribute('src', 'menino.png')
-      } else if (idade < 21 ) {
+      } else if (idade < 21) {
         img.setAttribute('src', 'jovem-homem.png')
       } else if (idade < 50) {
         img.setAttribute('src', 'homem.png')
@@ -31,21 +30,19 @@ function verificar() {
     }
 
     if (formSex[1].checked) {
-      genero = "Mulher"
-      if (idade >= 0 && idade < 10) {
-        img.setAttribute('src', 'menina.png')
-      } else if (idade < 21) {
-        img.setAttribute('src', 'jovem-mulher.png')
-      } else if (idade < 50) {
-        img.setAttribute('src', 'mulher.png')
-      } else {
-        img.setAttribute('src', 'senhora.png')
-      }
+      genero = 'Mulher'
+    } if (idade >= 0 && idade <= 10) {
+      img.setAttribute('src', 'menina.png')
+    } else if (idade < 21) {
+      img.setAttribute('src', 'jovem-mulher.png')
+    } else if (idade < 50) {
+      img.setAttribute('src', 'mulher.png')
+    } else {
+      img.setAttribute('src', 'senhora.png')
     }
 
     resultado.style.textAlign = "center"
-    resultado.innerHTML = `Identificamos ${genero} de ${idade} anos`
+    resultado.innerHTML = `Detectamos ${genero} de ${idade} anos`
     resultado.appendChild(img)
   }
 }
-
